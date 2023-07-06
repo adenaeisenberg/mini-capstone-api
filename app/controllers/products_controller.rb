@@ -4,11 +4,6 @@ class ProductsController < ApplicationController
     render template: "products/index"
   end
 
-  # def show_one_product
-  #   @product = Product.first
-  #   render template: "products/show"
-  # end
-
   def hand_towels
     @product = Product.first
     render template: "products/show"
