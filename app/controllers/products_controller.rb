@@ -27,7 +27,12 @@ class ProductsController < ApplicationController
       image_url: params["image_url"] || @product.image_url,
       description: params["description"] || @product.description,
     )
-
     render :show
+  end
+
+  def destroy
+    product = Product.find_by(id: params["id"])
+    product.destroy
+    render json: { message: "This recipe has been deleted!" }
   end
 end
