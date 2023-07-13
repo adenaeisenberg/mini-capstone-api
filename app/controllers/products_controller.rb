@@ -17,7 +17,11 @@ class ProductsController < ApplicationController
       description: params["description"],
       inventory: params["inventory"],
     )
-    render :show
+    if @product.save
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -29,7 +33,11 @@ class ProductsController < ApplicationController
       description: params["description"] || @product.description,
       inventory: params["inventory"] || @product.inventory,
     )
-    render :show
+    if @product.save
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
