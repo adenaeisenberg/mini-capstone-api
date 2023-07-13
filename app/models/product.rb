@@ -1,6 +1,11 @@
 class Product < ApplicationRecord
+  validates :inventory, numericality: true
+  validates :inventory, comparison: { greater_than: 0 }
+  validates :name, :presence => true
   validates :price, :presence => true
-  validates
+  validates :description, :presence => true
+  validates :inventory, :presence => true
+  validates :image_url, :presence => true
 
   def is_discounted?
     if price <= 10

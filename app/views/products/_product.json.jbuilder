@@ -5,4 +5,5 @@ json.price product.price
 # json.tax product.tax
 # json.total product.total
 json.image_url product.image_url
+json.inventory product.inventory
 json.description product.description
