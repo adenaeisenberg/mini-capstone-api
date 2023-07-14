@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :price, :presence => true
   validates :description, :presence => true
   validates :inventory, :presence => true
-  validates :image_url, :presence => true
+  # validates :image_url, :presence => true
 
   def is_discounted?
     if price <= 10
@@ -26,4 +26,8 @@ class Product < ApplicationRecord
   def supplier
     Supplier.find_by(id: supplier_id)
   end
+
+  def image 
+    Image.find_by(id: image_id)
+  end 
 end
