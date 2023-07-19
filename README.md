@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# 1. make sure user is logged in- user should be signed in with jwt
+# 2. user selects the quantity of single product they want 
+# 3. user presses purchase button and inventory decreases based on quantity user is buying. Tax and subtotal are calculated and appear on screen. 
+# 4. 
