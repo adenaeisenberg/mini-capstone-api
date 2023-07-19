@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
       price: params["price"],
       image: params["image"],
       description: params["description"],
-      inventory: params["inventory"],
+      quantity: params["quantity"],
     )
     if @product.save
       render :show
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
       price: params["price"] || @product.price,
       image: params["image"] || @product.image,
       description: params["description"] || @product.description,
-      inventory: params["inventory"] || @product.inventory,
+      quantity: params["quantity"] || @product.inventory,
     )
     if @product.save
       render :show

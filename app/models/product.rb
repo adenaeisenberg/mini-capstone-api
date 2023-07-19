@@ -1,10 +1,10 @@
 class Product < ApplicationRecord
-  validates :inventory, numericality: true
-  validates :inventory, comparison: { greater_than: 0 }
+  validates :quantity, numericality: true
+  validates :quantity, comparison: { greater_than: 0 }
   validates :name, :presence => true
   validates :price, :presence => true
   validates :description, :presence => true
-  validates :inventory, :presence => true
+  validates :quantity, :presence => true
 
   belongs_to :supplier
   # def supplier
