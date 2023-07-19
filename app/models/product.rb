@@ -16,6 +16,8 @@ class Product < ApplicationRecord
   #   Image.where(product_id: id)
   # end
 
+  belongs_to :order
+
   def is_discounted?
     if price <= 10
       true
