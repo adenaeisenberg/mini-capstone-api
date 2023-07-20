@@ -23,12 +23,20 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find_by(id: params[:id])
-    render :show
+    if current_user
+      @order = current_user.orders.find_by(id: params[:id])
+      render :show
+    else
+      render json: { message: "Please sign in to view your orders." }, status: :unauthorized
+    end
   end
 
   def index
-    @orders = current_user.orders
-    render :index
+    if current_user
+      @orders = current_user.orders
+      render :index
+    else
+      render json: { message: "Please sign in to view your orders." }, status: :unauthorized
+    end
   end
 end
