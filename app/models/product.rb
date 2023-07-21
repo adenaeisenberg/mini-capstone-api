@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   validates :description, :presence => true
   validates :quantity, :presence => true
 
-  has_many :orders
+  has_many :orders, through: :carted_products 
   belongs_to :supplier
   has_many :images
   has_many :category_products

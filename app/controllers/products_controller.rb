@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
       price: params["price"] || @product.price,
       image: params["image"] || @product.image,
       description: params["description"] || @product.description,
-      quantity: params["quantity"] || @product.inventory,
+      quantity: params["quantity"] || @product.quantity,
     )
     if @product.save
       render :show
