@@ -7,5 +7,6 @@ class CartedProductsController < ApplicationController
       status: params[:status],
       order_id: params[:order_id],
     )
+    render :show
   end
 end
